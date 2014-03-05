@@ -25,9 +25,10 @@ class UserService
      */
     private $user;
     
-    public function __construct(EntityManager $entityManager)
+    public function __construct(EntityManager $entityManager, Session $session)
     {
         $this->entityManager = $entityManager;
+        $this->session = $session;
     }
 
     /**
@@ -104,6 +105,8 @@ class UserService
         $session->set('token', $user->getToken());
         $session->set('user_id', $user->getId());
 
+        $session->save();
+
         return $this;
     }
 
@@ -113,7 +116,6 @@ class UserService
      */
     private function getSession()
     {
-        if ($this->session === null) $this->session = new Session();
         return $this->session;
     }
 }

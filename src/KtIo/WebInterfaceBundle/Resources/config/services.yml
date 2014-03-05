@@ -3,6 +3,7 @@ services:
         class: KtIo\WebInterfaceBundle\Services\UserService
         arguments:
             entityManager: "@doctrine.orm.entity_manager"
+            session: "@session"
     kt_io_web_interface.session_listener:
         class: KtIo\WebInterfaceBundle\EventListener\SessionListener
         arguments:
