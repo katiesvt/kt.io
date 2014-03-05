@@ -24,7 +24,7 @@ class Url
     /**
      * @var string
      *
-     * @ORM\Column(name="short_url", type="string", length=6)
+     * @ORM\Column(name="short_url", type="string", length=6, nullable=true)
      */
     private $shortUrl;
 

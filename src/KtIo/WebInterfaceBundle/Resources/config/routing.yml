@@ -1,7 +1,11 @@
-kt_io_web_interface_homepage:
+url_new:
     pattern:  /
     defaults: { _controller: KtIoWebInterfaceBundle:Url:new }
 
-kt_io_web_interface_url_fetch:
+url_fetch:
     pattern: /{hash}
     defaults: { _controller: KtIoWebInterfaceBundle:Url:fetch }
+
+url_show:
+    pattern: /show/{id}
+    defaults: { _controller: KtIoWebInterfaceBundle:Url:show }
