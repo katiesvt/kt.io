@@ -33,7 +33,19 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ ]
+    assets:
+        twitter_bootstrap_css:
+            inputs:
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.min.css
+                #- %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-theme.min.css
+        twitter_bootstrap_js:
+            inputs:
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.min.js
+        jquery:
+            inputs:
+                # TODO use app/components?
+                - %kernel.root_dir%/../vendor/components/jquery/jquery.min.js
+    bundles:        [ "KtIoWebInterfaceBundle" ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

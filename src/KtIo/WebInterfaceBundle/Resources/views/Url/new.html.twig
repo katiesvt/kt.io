@@ -1,5 +1,16 @@
-{% extends '::base.html.twig' %}
+{% extends 'KtIoWebInterfaceBundle:Url:cover.html.twig' %}
+
+{% block cover_heading %}
+  shorter.
+{% endblock %}
 
 {% block body %}
-  {{ form(form) }}
+  {{ form_start(form) }}
+    {{ form_errors(form) }}
+
+      {{ form_widget(form.target_url, { 'attr': { 'class': 'form-control input-lg', 'placeholder': 'http://' }}) }}
+
+      {{ form_widget(form.save, { 'attr': { 'class': 'btn btn-default btn-lg sr-only' }}) }}
+
+  {{ form_end(form) }}
 {% endblock %}
