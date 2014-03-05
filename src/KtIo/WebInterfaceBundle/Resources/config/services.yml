@@ -1,0 +1,11 @@
+services:
+    kt_io_web_interface.user_service:
+        class: KtIo\WebInterfaceBundle\Services\UserService
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+    kt_io_web_interface.session_listener:
+        class: KtIo\WebInterfaceBundle\EventListener\SessionListener
+        arguments:
+            userService: "@kt_io_web_interface.user_service"
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }

@@ -1,0 +1,4 @@
+kt_io_web_interface:
+    resource: "@KtIoWebInterfaceBundle/Resources/config/routing.yml"
+    prefix:   /
+

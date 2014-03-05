@@ -1,0 +1,7 @@
+kt_io_web_interface_homepage:
+    pattern:  /
+    defaults: { _controller: KtIoWebInterfaceBundle:Default:index }
+
+kt_io_web_interface_url_fetch:
+    pattern: /{hash}
+    defaults: { _controller: KtIoWebInterfaceBundle:Url:fetch }
