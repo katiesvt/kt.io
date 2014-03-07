@@ -4,6 +4,10 @@ services:
         arguments:
             entityManager: "@doctrine.orm.entity_manager"
             session: "@session"
+    kt_io_web_interface.message_queue_service:
+        class: KtIo\WebInterfaceBundle\Services\MessageQueueService
+        arguments:
+            socketAddress: "%zmq_worker_connect%"
     kt_io_web_interface.session_listener:
         class: KtIo\WebInterfaceBundle\EventListener\SessionListener
         arguments:

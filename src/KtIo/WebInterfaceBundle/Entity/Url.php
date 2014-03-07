@@ -3,35 +3,46 @@
 namespace KtIo\WebInterfaceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use KtIo\WebInterfaceBundle\Entity\User;
+
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
 
 /**
  * Url
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="KtIo\WebInterfaceBundle\Entity\UrlRepository")
+ * @ExclusionPolicy("all")
  */
 class Url
 {
     /**
+     * Primary key, unique identifier.
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
     /**
+     * The hash that we should match against in order to retrieve this entity.
      * @var string
      *
-     * @ORM\Column(name="short_url", type="string", length=6, nullable=true)
+     * @ORM\Column(name="short_url", type="string", length=8, nullable=true)
+     * @Expose
      */
     private $shortUrl;
 
     /**
+     * The URL that we should redirect to.
      * @var string
      *
      * @ORM\Column(name="target_url", type="string", length=320)
+     * @Expose
      */
     private $targetUrl;
     
@@ -101,10 +112,10 @@ class Url
     /**
      * Set user
      *
-     * @param \KtIo\WebInterfaceBundle\Entity\User $user
+     * @param User $user
      * @return Url
      */
-    public function setUser(\KtIo\WebInterfaceBundle\Entity\User $user = null)
+    public function setUser(User $user = null)
     {
         $this->user = $user;
 
@@ -114,7 +125,7 @@ class Url
     /**
      * Get user
      *
-     * @return \KtIo\WebInterfaceBundle\Entity\User
+     * @return User
      */
     public function getUser()
     {

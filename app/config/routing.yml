@@ -1,4 +1,11 @@
+kt_io_worker:
+    resource: "@KtIoWorkerBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kt_io_web_interface:
     resource: "@KtIoWebInterfaceBundle/Resources/config/routing.yml"
     prefix:   /
 
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

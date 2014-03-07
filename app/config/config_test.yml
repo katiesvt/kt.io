@@ -14,3 +14,12 @@ web_profiler:
 
 swiftmailer:
     disable_delivery: true
+
+doctrine:
+    dbal:
+        driver:       pdo_mysql
+        host:         localhost
+        dbname:    kt_io_test
+        user:         root
+        password: ~
+        charset:     UTF8

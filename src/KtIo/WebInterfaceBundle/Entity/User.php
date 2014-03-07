@@ -76,7 +76,6 @@ class User
     /**
      * Update lastVisit to the current time
      *
-     * @param \DateTime $lastVisit
      * @return User
      */
     public function updateLastVisit()

@@ -11,7 +11,7 @@ use KtIo\WebInterfaceBundle\Entity\UserRepository;
 class UserService
 {
     /**
-     * @var Doctrine
+     * @var EntityManager
      */
     private $entityManager;
 
@@ -47,6 +47,7 @@ class UserService
     /**
      * Returns the current User.
      * @return User
+     * @throws \Exception
      */
     public function getUser()
     {
@@ -88,7 +89,7 @@ class UserService
     private function updateUser()
     {
         $em = $this->entityManager;
-        $em->persist($this->getUser()->updateLastVisit());
+        $this->getUser()->updateLastVisit();
         $em->flush();
 
         return $this;

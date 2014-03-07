@@ -1,0 +1,11 @@
+services:
+    kt_io_worker.message_queue_service:
+        class: KtIo\WorkerBundle\Services\MessageQueueService
+        arguments:
+            socketAddress: "%zmq_worker_bind%"
+    kt_io_worker.url_service:
+        class: KtIo\WorkerBundle\Services\UrlService
+        arguments:
+            entityManager: "@doctrine.orm.entity_manager"
+    kt_io_worker.timer_service:
+        class: KtIo\WorkerBundle\Services\TimerService

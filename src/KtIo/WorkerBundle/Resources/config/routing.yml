@@ -1,0 +1,3 @@
+kt_io_worker_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: KtIoWorkerBundle:Default:index }

@@ -1,6 +1,15 @@
-{% extends '::base.html.twig' %}
+{% extends '::base_cover.html.twig' %}
 
 {% block body %}
-  Target URL: {{ url.targetUrl }}
-  Short URL: {{ url.shortUrl }}
+    {% set shortUrl = url.shortUrl|length > 0 ? url('url_fetch', { hash: url.shortUrl }) %}
+
+    {% if not shortUrl %}
+
+    {% endif %}
+
+    <p class="lead">Target URL: {{ url.targetUrl }}</p>
+    <p class="lead">Short URL: {{ shortUrl }}</p>
+    <a href="{{ shortUrl ?: '' }}" class="btn btn-success" {{ (not shortUrl) ? 'disabled="disabled"' }}>Visit</a>
+    <a href="{{ url('url_delete', { id: url.id }) }}" class="btn btn-danger">Delete</a>
+
 {% endblock %}

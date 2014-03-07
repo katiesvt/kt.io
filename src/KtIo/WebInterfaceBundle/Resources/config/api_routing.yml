@@ -1,0 +1,4 @@
+ktio_web_api_v1:
+    type:        rest
+    prefix:      /v1
+    resource:    "KtIo\WebInterfaceBundle\Controller\RestController"

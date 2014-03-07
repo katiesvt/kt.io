@@ -2,7 +2,7 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony
+    database_name:     kt_io
     database_user:     root
     database_password: ~
 
@@ -13,3 +13,5 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+    zmq_worker_connect: "tcp://localhost:5555"
+    zmq_worker_bind:    "tcp://*:5555"

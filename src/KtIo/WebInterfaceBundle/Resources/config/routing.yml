@@ -9,3 +9,16 @@ url_fetch:
 url_show:
     pattern: /show/{id}
     defaults: { _controller: KtIoWebInterfaceBundle:Url:show }
+
+url_delete:
+    pattern: /delete/{id}
+    defaults: { _controller: KtIoWebInterfaceBundle:Url:delete }
+
+my_url_index:
+    pattern: /my/urls
+    defaults: { _controller: KtIoWebInterfaceBundle:Url:indexForUser }
+
+ktio_web_api:
+    type: rest
+    prefix: /api
+    resource: "@KtIoWebInterfaceBundle/Resources/config/api_routing.yml"

@@ -1,16 +1,17 @@
-{% extends 'KtIoWebInterfaceBundle:Url:cover.html.twig' %}
-
-{% block cover_heading %}
-  shorter.
-{% endblock %}
+{% extends '::base_cover.html.twig' %}
 
 {% block body %}
-  {{ form_start(form) }}
-    {{ form_errors(form) }}
+    <div class="inner cover">
+        <h1 class="cover-heading">
+            shorter.
+        </h1>
+        {{ form_start(form) }}
+            {{ form_errors(form) }}
 
-      {{ form_widget(form.target_url, { 'attr': { 'class': 'form-control input-lg', 'placeholder': 'http://' }}) }}
+            {{ form_widget(form.target_url, { 'attr': { 'class': 'form-control input-lg', 'placeholder': 'http://' }}) }}
 
-      {{ form_widget(form.save, { 'attr': { 'class': 'btn btn-default btn-lg sr-only' }}) }}
+            {{ form_widget(form.save, { 'attr': { 'class': 'btn btn-default btn-lg sr-only' }}) }}
 
-  {{ form_end(form) }}
+        {{ form_end(form) }}
+    </div>
 {% endblock %}
